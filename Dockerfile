@@ -14,9 +14,7 @@ RUN set -e
 # Download and extract PostgreSQL plugin for WordPress
 RUN git clone https://github.com/kevinoid/postgresql-for-wordpress.git && \
     echo "Download successful" && \
-    cp -rf postgresql-for-wordpress/pg4wp ./pg4wp && \
-    echo "Extraction successful" && \
-    mv ./pg4wp /var/www/html/wp-content/plugins/pg4wp && \
+    mv postgresql-for-wordpress/pg4wp /var/www/html/wp-content/plugins/pg4wp && \
     cp -rf /var/www/html/wp-content/plugins/pg4wp/db.php /var/www/html/wp-content/db.php  && \
     #cp -rf /var/www/html/wp-content/wp-config-sample.php  /var/www/html/wp-content/wp-config.php  &&\
     echo "Move successful"
