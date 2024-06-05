@@ -19,6 +19,7 @@ RUN git clone https://github.com/kevinoid/postgresql-for-wordpress.git && \
     #cp -rf /var/www/html/wp-content/wp-config-sample.php  /var/www/html/wp-content/wp-config.php  &&\
     echo "Move successful"
 
+RUN chown -R www-data:www-data /var/www/html/wp-content
 RUN chmod -R 777  /var/www/html/wp-content
 
 RUN rm -rf /usr/local/etc/php/conf.d/uploads.ini
